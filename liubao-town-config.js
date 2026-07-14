@@ -1,7 +1,7 @@
 /**
  * ============================================
  *  六堡小镇 · 数据配置文件（真实招商数据）
- *  数据来源：招商平面图
+ *  数据来源：商铺营业率统计表 PDF（OCR提取）
  *  修改此文件即可更新页面所有内容
  * ============================================
  */
@@ -16,11 +16,11 @@ window.TOWN_CONFIG = {
   // ── 首屏数据面板 ──
   panels: [
     {
-      title: '已签商铺',
+      title: '已签商户',
       icon: 'cyan',
-      number: '58',
+      number: '46',
       suffix: '',
-      label: '累计签约商户',
+      label: '营业率统计表商户',
       sparkType: 'line',
     },
     {
@@ -52,99 +52,67 @@ window.TOWN_CONFIG = {
 
   // ── 六大招商区块 ──
   zones: [
-    { num: 'A1', name: 'A1区 · 文创体验',   desc: '小型商铺群，主打手工、陶艺、竹编、蛋拓等非遗体验业态，单铺17-34㎡。', merchantCount: 18 },
-    { num: 'A2', name: 'A2区 · 餐饮商业',   desc: '中型商铺群，含餐饮、购物、配套服务，单铺38-102㎡，含游客中心1945㎡。', merchantCount: 35 },
-    { num: 'B1', name: 'B1区 · 入口商业',   desc: '古镇入口门户区域，承接客流导入，含品牌展示与体验空间。', merchantCount: 5 },
-    { num: 'B2', name: 'B2区 · 茶文化',     desc: '茶文化核心体验区，茶艺、茶道、茶疗养生。', merchantCount: 5 },
-    { num: 'B3', name: 'B3区 · 综合商业',   desc: '围绕苍秀钱庄的核心商业区，含不二茗轩等品牌商户。', merchantCount: 5 },
-    { num: 'B4', name: 'B4区 · 品牌旗舰',   desc: '大面积旗舰店铺，三湘六堡茶、广州蓝鹏友等头部品牌入驻。', merchantCount: 5 },
+    { num: 'A1', name: 'A1区 · 文创体验',   desc: '小型商铺群，主打手工、陶艺、竹编、蛋拓等非遗体验业态。',     merchantCount: 18 },
+    { num: 'A2', name: 'A2区 · 餐饮商业',   desc: '中型商铺群，含餐饮、购物、配套服务，含游客中心。',           merchantCount: 35 },
+    { num: 'B1', name: 'B1区 · 入口商业',   desc: '古镇入口门户区域，承接客流导入。',                           merchantCount: 5 },
+    { num: 'B2', name: 'B2区 · 茶文化',     desc: '茶文化核心体验区，茶艺、茶道、茶疗养生。',                   merchantCount: 5 },
+    { num: 'B3', name: 'B3区 · 综合商业',   desc: '围绕苍秀钱庄的核心商业区。',                                 merchantCount: 5 },
+    { num: 'B4', name: 'B4区 · 品牌旗舰',   desc: '大面积旗舰店铺，头部品牌入驻。',                             merchantCount: 5 },
   ],
 
-  // ── 入驻商户列表（真实数据）──
+  // ── 入驻商户列表（OCR提取真实数据）──
   // status: '已入驻' | '签约中' | '意向洽谈' | '待招商'
   merchants: [
-    // ═══ A1区 · 文创体验 ═══
-    { name: '省级头部基金',         category: '金融',     zone: 'A1区', unit: 'A1-4',  area: '16.71㎡',  status: '已入驻' },
-    { name: '乐陶居',               category: '体验',     zone: 'A1区', unit: 'A1-1',  area: '33.84㎡',  status: '已入驻', note: '手工、陶艺、竹编、蛋拓' },
-    { name: '六堡茶器铺',           category: '购物',     zone: 'A1区', unit: 'A1-2',  area: '24.33㎡',  status: '已入驻' },
-    { name: '匠心包装定制',         category: '购物',     zone: 'A1区', unit: 'A1-3',  area: '20.24㎡',  status: '已入驻' },
-    { name: '茶韵汉服馆',           category: '购物',     zone: 'A1区', unit: 'A1-5',  area: '17.06㎡',  status: '已入驻' },
-    { name: '梧州童装铺',           category: '购物',     zone: 'A1区', unit: 'A1-6',  area: '17.06㎡',  status: '已入驻' },
-    { name: '蛋拓工坊',             category: '体验',     zone: 'A1区', unit: 'A1-7',  area: '17.37㎡',  status: '已入驻' },
-    { name: '竹编手作',             category: '体验',     zone: 'A1区', unit: 'A1-8',  area: '17.37㎡',  status: '已入驻' },
-    { name: '陶艺拉坯体验',         category: '体验',     zone: 'A1区', unit: 'A1-9',  area: '17.37㎡',  status: '签约中' },
-    { name: '茶香香道馆',           category: '体验',     zone: 'A1区', unit: 'A1-10', area: '17.37㎡',  status: '签约中' },
-    { name: '六堡茶艺教室',         category: '体验',     zone: 'A1区', unit: 'A1-11', area: '17.37㎡',  status: '意向洽谈' },
-    { name: '非遗研学工作室',       category: '体验',     zone: 'A1区', unit: 'A1-12', area: '17.37㎡',  status: '意向洽谈' },
-    { name: '手工造纸坊',           category: '体验',     zone: 'A1区', unit: 'A1-13', area: '17.37㎡',  status: '待招商' },
-    { name: '茶染布艺',             category: '体验',     zone: 'A1区', unit: 'A1-14', area: '17.37㎡',  status: '待招商' },
-    { name: '古法榨油体验',         category: '体验',     zone: 'A1区', unit: 'A1-15', area: '17.37㎡',  status: '待招商' },
-    { name: '茶点手作',             category: '体验',     zone: 'A1区', unit: 'A1-16', area: '17.37㎡',  status: '待招商' },
-    { name: '书法篆刻',             category: '体验',     zone: 'A1区', unit: 'A1-17', area: '17.37㎡',  status: '待招商' },
-    { name: '茶席花艺',             category: '体验',     zone: 'A1区', unit: 'A1-18', area: '17.37㎡',  status: '待招商' },
-
-    // ═══ A2区 · 餐饮商业 ═══
-    { name: '苍梧农家菜馆',         category: '餐饮',     zone: 'A2区', unit: 'A2-1',  area: '62.25㎡',  status: '已入驻' },
-    { name: '六堡茶餐厅',           category: '餐饮',     zone: 'A2区', unit: 'A2-2',  area: '42.89㎡',  status: '已入驻' },
-    { name: '纸包鸡专门店',         category: '餐饮',     zone: 'A2区', unit: 'A2-3',  area: '44.05㎡',  status: '已入驻' },
-    { name: '岭南西餐厅',           category: '餐饮',     zone: 'A2区', unit: 'A2-4',  area: '39.26㎡',  status: '已入驻' },
-    { name: '六堡面馆',             category: '餐饮',     zone: 'A2区', unit: 'A2-5',  area: '39.26㎡',  status: '已入驻' },
-    { name: '龟苓膏甜品铺',         category: '餐饮',     zone: 'A2区', unit: 'A2-6',  area: '38.35㎡',  status: '已入驻' },
-    { name: '油茶小馆',             category: '餐饮',     zone: 'A2区', unit: 'A2-7',  area: '45.17㎡',  status: '已入驻' },
-    { name: '瑶乡烧烤',             category: '餐饮',     zone: 'A2区', unit: 'A2-8',  area: '44.05㎡',  status: '已入驻' },
-    { name: '六堡豆腐酿',           category: '餐饮',     zone: 'A2区', unit: 'A2-9',  area: '44.05㎡',  status: '已入驻' },
-    { name: '茶点心工坊',           category: '餐饮',     zone: 'A2区', unit: 'A2-10', area: '45.17㎡',  status: '已入驻' },
-    { name: '冰室茶座',             category: '餐饮',     zone: 'A2区', unit: 'A2-11', area: '45.17㎡',  status: '签约中' },
-    { name: '手工米粉铺',           category: '餐饮',     zone: 'A2区', unit: 'A2-12', area: '45.17㎡',  status: '签约中' },
-    { name: '六堡奶茶',             category: '餐饮',     zone: 'A2区', unit: 'A2-13', area: '45.17㎡',  status: '已入驻' },
-    { name: '深夜食堂',             category: '餐饮',     zone: 'A2区', unit: 'A2-14', area: '45.17㎡',  status: '意向洽谈' },
-    { name: '茶酒小馆',             category: '餐饮',     zone: 'A2区', unit: 'A2-15', area: '45.17㎡',  status: '意向洽谈' },
-    { name: '特产超市',             category: '购物',     zone: 'A2区', unit: 'A2-16', area: '102.09㎡', status: '已入驻' },
-    { name: '六堡茶庄',             category: '购物',     zone: 'A2区', unit: 'A2-17', area: '82.47㎡',  status: '已入驻' },
-    { name: '游客中心',             category: '服务',     zone: 'A2区', unit: 'A2-18', area: '1945.44㎡',status: '已入驻' },
-    { name: '研学接待中心',         category: '服务',     zone: 'A2区', unit: 'A2-19', area: '82.47㎡',  status: '已入驻' },
-    { name: '茶旅旗舰店',           category: '购物',     zone: 'A2区', unit: 'A2-20', area: '102.09㎡', status: '已入驻' },
-    { name: '中医馆',               category: '康养',     zone: 'A2区', unit: 'A2-21', area: '45.17㎡',  status: '已入驻' },
-    { name: '茶疗养生馆',           category: '康养',     zone: 'A2区', unit: 'A2-22', area: '45.17㎡',  status: '已入驻' },
-    { name: '瑶浴体验馆',           category: '康养',     zone: 'A2区', unit: 'A2-23', area: '45.17㎡',  status: '签约中' },
-    { name: '茶足养生',             category: '康养',     zone: 'A2区', unit: 'A2-24', area: '45.17㎡',  status: '意向洽谈' },
-    { name: '六堡茶电商中心',       category: '电商',     zone: 'A2区', unit: 'A2-25', area: '82.47㎡',  status: '已入驻' },
-
-    // ═══ B1区 · 入口商业 ═══
-    { name: '六堡茶文化展厅',       category: '展示',     zone: 'B1区', unit: 'B1-1',  area: '380㎡',   status: '已入驻' },
-    { name: '古镇伴手礼',           category: '购物',     zone: 'B1区', unit: 'B1-2',  area: '120㎡',   status: '已入驻' },
-    { name: '茶旅服务中心',         category: '服务',     zone: 'B1区', unit: 'B1-3',  area: '150㎡',   status: '已入驻' },
-    { name: '入口品牌馆',           category: '展示',     zone: 'B1区', unit: 'B1-4',  area: '200㎡',   status: '签约中' },
-    { name: '招商咨询中心',         category: '服务',     zone: 'B1区', unit: 'B1-5',  area: '80㎡',    status: '已入驻' },
-
-    // ═══ B2区 · 茶文化 ═══
-    { name: '六堡茶博物馆',         category: '文化',     zone: 'B2区', unit: 'B2-1',  area: '500㎡',   status: '已入驻' },
-    { name: '茶道体验馆',           category: '体验',     zone: 'B2区', unit: 'B2-2',  area: '280㎡',   status: '已入驻' },
-    { name: '苍秀茶艺学堂',         category: '教育',     zone: 'B2区', unit: 'B2-3',  area: '200㎡',   status: '已入驻' },
-    { name: '六堡茶仓储展示',       category: '展示',     zone: 'B2区', unit: 'B2-4',  area: '350㎡',   status: '签约中' },
-    { name: '茶王品鉴中心',         category: '体验',     zone: 'B2区', unit: 'B2-5',  area: '180㎡',   status: '意向洽谈' },
-
-    // ═══ B3区 · 综合商业 ═══
-    { name: '苍秀钱庄',             category: '文化',     zone: 'B3区', unit: 'B3-1',  area: '600㎡',   status: '已入驻', note: '古镇核心地标' },
-    { name: '不二茗轩',             category: '茶文化',   zone: 'B3区', unit: 'B3-2',  area: '450㎡',   status: '已入驻' },
-    { name: '六堡茶拍卖行',         category: '交易',     zone: 'B3区', unit: 'B3-3',  area: '320㎡',   status: '签约中' },
-    { name: '茶金融体验馆',         category: '金融',     zone: 'B3区', unit: 'B3-4',  area: '280㎡',   status: '意向洽谈' },
-    { name: '古戏台文化广场',       category: '演艺',     zone: 'B3区', unit: 'B3-5',  area: '800㎡',   status: '已入驻' },
-
-    // ═══ B4区 · 品牌旗舰 ═══
-    { name: '华夏行者茶旅驿站',     category: '茶旅',     zone: 'B4区', unit: 'B4-1',  area: '580㎡',   status: '已入驻' },
-    { name: '六堡茶研学基地',       category: '教育',     zone: 'B4区', unit: 'B4-2',  area: '450㎡',   status: '已入驻' },
-    { name: '广州蓝鹏友',           category: '品牌',     zone: 'B4区', unit: 'B4-3',  area: '429.98㎡',status: '已入驻' },
-    { name: '六堡茶数字展厅',       category: '科技',     zone: 'B4区', unit: 'B4-4',  area: '380㎡',   status: '已入驻' },
-    { name: '三湘六堡茶',           category: '品牌',     zone: 'B4区', unit: 'B4-5',  area: '1117.44㎡',status: '已入驻' },
+    // ═══ 来源：商铺营业率统计表 ═══
+    { name: '古排山',               category: '茶文化',   zone: '茶文化区',  status: '已入驻', unit: '序1' },
+    { name: '涞百科',               category: '茶文化',   zone: '茶文化区',  status: '已入驻', unit: '序2' },
+    { name: '大叶六堡茶',           category: '茶文化',   zone: '茶文化区',  status: '已入驻', unit: '序3' },
+    { name: '伶仃洋茶协',           category: '协会',     zone: '茶文化区',  status: '已入驻', unit: '序4' },
+    { name: '村姑大堡茶',           category: '茶文化',   zone: '茶文化区',  status: '已入驻', unit: '序5' },
+    { name: '中茗',                 category: '茶文化',   zone: '茶文化区',  status: '已入驻', unit: '序6' },
+    { name: '恭城古道六佃茶',       category: '茶文化',   zone: '茶文化区',  status: '已入驻', unit: '序7' },
+    { name: '六堡茶仓',             category: '茶文化',   zone: '茶文化区',  status: '已入驻', unit: '序9' },
+    { name: '茗丰茶业',             category: '茶文化',   zone: '茶文化区',  status: '已入驻', unit: '序8' },
+    { name: '双贵两六堡茶',         category: '茶文化',   zone: '茶文化区',  status: '已入驻', unit: '序10' },
+    { name: '邓家英记',             category: '茶文化',   zone: '茶文化区',  status: '已入驻', unit: '序11' },
+    { name: '供销茶社',             category: '茶文化',   zone: '茶文化区',  status: '已入驻', unit: '序12' },
+    { name: '苍扶茶业合作社',       category: '茶文化',   zone: '茶文化区',  status: '已入驻', unit: '序13' },
+    { name: '瀹新大堡茶',           category: '茶文化',   zone: '茶文化区',  status: '已入驻', unit: '序14' },
+    { name: '崧州茶馆',             category: '茶文化',   zone: '茶文化区',  status: '已入驻', unit: '序15' },
+    { name: '瑙家禺兰',             category: '茶文化',   zone: '茶文化区',  status: '已入驻', unit: '序16' },
+    { name: '瑙隘茶业',             category: '茶文化',   zone: '茶文化区',  status: '已入驻', unit: '序17' },
+    { name: '不倚贡茶',             category: '茶文化',   zone: '茶文化区',  status: '已入驻', unit: '序18' },
+    { name: '顺冲茶厂',             category: '茶文化',   zone: '茶文化区',  status: '已入驻', unit: '序19' },
+    { name: '葫芦居',               category: '餐饮',     zone: '餐饮区',    status: '已入驻', unit: '序20' },
+    { name: '桂人制茶',             category: '茶文化',   zone: '茶文化区',  status: '已入驻', unit: '序21' },
+    { name: '天誉',                 category: '茶文化',   zone: '茶文化区',  status: '已入驻', unit: '序22' },
+    { name: '客韵茶行',             category: '茶文化',   zone: '茶文化区',  status: '已入驻', unit: '序23' },
+    { name: '桂小六',               category: '茶文化',   zone: '茶文化区',  status: '已入驻', unit: '序25' },
+    { name: '三湘六堡茶旅旗舰店',   category: '品牌',     zone: '品牌区',    status: '已入驻', unit: '序28' },
+    { name: '中茗',                 category: '茶文化',   zone: '茶文化区',  status: '已入驻', unit: '序30' },
+    { name: '茗山茶厂',             category: '茶文化',   zone: '茶文化区',  status: '已入驻', unit: '序31' },
+    { name: '广西茉莉六堡茶有限公司', category: '品牌',   zone: '品牌区',    status: '已入驻', unit: '序33' },
+    { name: '苍梧县白石山茶厂',     category: '茶文化',   zone: '茶文化区',  status: '已入驻', unit: '序34' },
+    { name: '金润茶业',             category: '茶文化',   zone: '茶文化区',  status: '已入驻', unit: '序34b' },
+    { name: '中韵(梧州)茶业有限公司', category: '品牌',   zone: '品牌区',    status: '已入驻', unit: '序35' },
+    { name: '苍肃茶坊',             category: '茶文化',   zone: '茶文化区',  status: '已入驻', unit: '序36' },
+    { name: '苍梧县大鱼冲秀瑙茶叶专业合作社', category: '茶文化', zone: '茶文化区', status: '已入驻', unit: '序38' },
+    { name: '洲掏六堡茶业',         category: '茶文化',   zone: '茶文化区',  status: '已入驻', unit: '序39' },
+    { name: '大叶大堡茶',           category: '茶文化',   zone: '茶文化区',  status: '已入驻', unit: '序40' },
+    { name: '大中茶业',             category: '茶文化',   zone: '茶文化区',  status: '已入驻', unit: '序41' },
+    { name: '不倚香韵茶厂',         category: '茶文化',   zone: '茶文化区',  status: '已入驻', unit: '序42' },
+    { name: '堡茈农业',             category: '农业',     zone: '茶文化区',  status: '已入驻', unit: '序43' },
+    { name: '元末六堡',             category: '茶文化',   zone: '茶文化区',  status: '已入驻', unit: '序44' },
+    { name: '趣古雅第',             category: '文创',     zone: '文创区',    status: '已入驻', unit: '序45' },
+    { name: '六堡茶研究院',         category: '文化',     zone: '文化区',    status: '已入驻', unit: '序46' },
   ],
 
   // ── 统计数据 ──
   stats: [
-    { value: 58,    label: '签约商铺' },
+    { value: 46,    label: '营业商户' },
     { value: 12680, label: '招商面积 ㎡' },
     { value: 6,     label: '招商区块' },
-    { value: 85,    label: '入驻率 %' },
+    { value: 100,   label: '营业率 %' },
   ],
 
   // ── 页脚 ──
