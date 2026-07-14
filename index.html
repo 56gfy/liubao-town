@@ -708,9 +708,10 @@ window.addEventListener('scroll',()=>{
           '<span class="m-status ' + st + '">' + m.status + '</span>' +
         '</div>' +
         '<div class="m-card-meta">' +
-          '<span>' + m.category + '</span>' +
-          '<span>' + m.zone + '</span>' +
-          '<span>' + m.area + '</span>' +
+            '<span>' + m.category + '</span>' +
+            '<span>' + (m.unit || m.zone) + '</span>' +
+            '<span>' + m.area + '</span>' +
+            (m.note ? '<span style="color:var(--cyan)">' + m.note + '</span>' : '') +
         '</div>';
       grid.appendChild(card);
     });
