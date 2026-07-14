@@ -2,9 +2,6 @@
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
-<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-<meta http-equiv="Pragma" content="no-cache">
-<meta http-equiv="Expires" content="0">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>六堡小镇 · 智慧古镇投资平台</title>
 <style>
@@ -70,14 +67,30 @@ body{font-family:"Microsoft YaHei","PingFang SC",sans-serif;background:var(--bg-
 /* Mini sparkline */
 .gp-spark{margin-top:14px;height:28px;position:relative}
 .gp-spark svg{width:100%;height:100%}
-.gp1{top:26%;left:5%;animation-delay:1.2s}
-.gp2{top:18%;right:5%;animation-delay:1.5s}
-.gp3{bottom:20%;right:8%;animation-delay:1.8s}
+/* Bottom row layout */
+.gp-row{position:absolute;bottom:12%;left:50%;transform:translateX(-50%);z-index:10;
+  display:flex;gap:16px;animation:fadeSlideUp .8s 1.4s forwards;opacity:0}
+.gp{position:relative;min-width:0;width:200px;padding:18px 20px;
+  animation:none!important;opacity:1!important}
+.gp::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;border-radius:2px}
+.gp.cyan-accent::before{background:linear-gradient(90deg,transparent,var(--cyan),transparent)}
+.gp.gold-accent::before{background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+.gp.teal-accent::before{background:linear-gradient(90deg,transparent,#00b4dc,transparent)}
+.gp-head{display:flex;align-items:center;gap:8px;margin-bottom:10px}
+.gp-icon{width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.gp-icon svg{width:16px;height:16px}
+.gp-icon.cyan{background:rgba(0,229,184,.1);color:var(--cyan)}
+.gp-icon.gold{background:var(--gold-dim);color:var(--gold)}
+.gp-icon.teal{background:rgba(0,180,220,.1);color:#00b4dc}
+.gp h3{font-size:.65rem;font-weight:500;color:var(--text-mid);letter-spacing:.08em}
+.gp .num{font-size:1.6rem;font-weight:800;color:var(--text);line-height:1.1;margin:2px 0}
+.gp .num span{font-size:.75rem;font-weight:400;color:var(--cyan);margin-left:2px}
+.gp .label{font-size:.6rem;color:var(--text-dim);letter-spacing:.04em}
 
 /* ===== SCROLL HINT ===== */
-.scroll-hint{position:absolute;bottom:4%;left:50%;transform:translateX(-50%);z-index:10;
-  display:flex;flex-direction:column;align-items:center;gap:10px;
-  opacity:0;animation:fadeSlideUp .6s 2.2s forwards}
+.scroll-hint{position:absolute;bottom:2%;left:50%;transform:translateX(-50%);z-index:10;
+  display:flex;flex-direction:column;align-items:center;gap:8px;
+  opacity:0;animation:fadeSlideUp .6s 2s forwards}
 .scroll-hint span{font-size:.6rem;color:var(--text-dim);letter-spacing:.35em;text-transform:uppercase}
 .scroll-line{width:1px;height:36px;position:relative;overflow:hidden}
 .scroll-line::after{content:'';position:absolute;top:-100%;left:0;width:100%;height:100%;
@@ -165,7 +178,8 @@ footer p{font-size:.7rem;color:var(--text-dim);letter-spacing:.08em}
 .m-card-meta{display:flex;gap:12px;font-size:.68rem;color:var(--text-dim)}
 .m-card-meta span{display:flex;align-items:center;gap:4px}
 @media(max-width:768px){
-  .gp{position:relative!important;top:auto!important;left:auto!important;right:auto!important;bottom:auto!important;margin:10px auto;max-width:320px}
+  .gp-row{position:relative!important;bottom:auto!important;left:auto!important;transform:none!important;flex-direction:column;align-items:center;margin-top:20px}
+  .gp{width:90%;max-width:320px}
   #hero{height:auto;min-height:100vh;padding:80px 16px 40px}
   .hero-content{top:3%}
   .stats-bar{grid-template-columns:repeat(2,1fr)}
@@ -185,58 +199,33 @@ footer p{font-size:.7rem;color:var(--text-dim);letter-spacing:.08em}
     <p class="hero-sub">千年古镇 · 智慧新生</p>
   </div>
 
-  <!-- Panel 1 — Investment -->
-  <div class="gp gp1">
+  <div class="gp-row">
+  <div class="gp cyan-accent">
     <div class="gp-head">
-      <div class="gp-icon cyan">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="8" width="7" height="13" rx="1"/><rect x="14" y="3" width="7" height="18" rx="1"/></svg>
-      </div>
-      <h3>招商入驻</h3>
+      <div class="gp-icon cyan"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="8" width="7" height="13" rx="1"/><rect x="14" y="3" width="7" height="18" rx="1"/></svg></div>
+      <h3>入驻商户</h3>
     </div>
-    <div class="num">50<span>+</span></div>
-    <div class="label">优质商铺已入驻</div>
-    <div class="gp-spark">
-      <svg viewBox="0 0 120 28" fill="none"><polyline points="0,24 15,20 30,22 45,14 60,16 75,8 90,10 105,4 120,2" stroke="var(--cyan)" stroke-width="1.5" stroke-linecap="round" opacity=".5"/><circle cx="120" cy="2" r="2.5" fill="var(--cyan)"/></svg>
-    </div>
+    <div class="num">46<span>家</span></div>
+    <div class="label">统计表在营商户</div>
   </div>
 
-  <!-- Panel 2 — Traffic -->
-  <div class="gp gp2">
+  <div class="gp gold-accent">
     <div class="gp-head">
-      <div class="gp-icon gold">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="7" r="4"/><path d="M5.5 21c0-3.6 2.9-6.5 6.5-6.5s6.5 2.9 6.5 6.5"/></svg>
-      </div>
-      <h3>客流量预测</h3>
+      <div class="gp-icon gold"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18M5 21V7l7-4 7 4v14"/></svg></div>
+      <h3>招商面积</h3>
     </div>
-    <div class="num">12,000<span>+</span></div>
-    <div class="label">日均预测客流</div>
-    <div class="gp-spark">
-      <svg viewBox="0 0 120 28" fill="none"><polyline points="0,20 15,18 30,24 45,12 60,18 75,6 90,14 105,3 120,8" stroke="var(--gold)" stroke-width="1.5" stroke-linecap="round" opacity=".5"/><circle cx="120" cy="8" r="2.5" fill="var(--gold)"/></svg>
-    </div>
+    <div class="num">12,680<span>㎡</span></div>
+    <div class="label">总招商面积</div>
   </div>
 
-  <!-- Panel 3 — Distribution -->
-  <div class="gp gp3">
+  <div class="gp teal-accent">
     <div class="gp-head">
-      <div class="gp-icon teal">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
-      </div>
-      <h3>商铺分布</h3>
+      <div class="gp-icon teal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg></div>
+      <h3>招商区块</h3>
     </div>
-    <div class="num">8<span>大</span></div>
-    <div class="label">主题特色街区</div>
-    <div class="gp-spark">
-      <svg viewBox="0 0 120 28" fill="none">
-        <rect x="5" y="18" width="10" height="10" rx="2" fill="rgba(0,180,220,.2)"/>
-        <rect x="20" y="12" width="10" height="16" rx="2" fill="rgba(0,180,220,.25)"/>
-        <rect x="35" y="8" width="10" height="20" rx="2" fill="rgba(0,180,220,.3)"/>
-        <rect x="50" y="14" width="10" height="14" rx="2" fill="rgba(0,180,220,.25)"/>
-        <rect x="65" y="6" width="10" height="22" rx="2" fill="rgba(0,180,220,.35)"/>
-        <rect x="80" y="10" width="10" height="18" rx="2" fill="rgba(0,180,220,.3)"/>
-        <rect x="95" y="4" width="10" height="24" rx="2" fill="rgba(0,180,220,.4)"/>
-        <rect x="110" y="12" width="6" height="16" rx="2" fill="rgba(0,180,220,.25)"/>
-      </svg>
-    </div>
+    <div class="num">6<span>大区</span></div>
+    <div class="label">A1/A2/B1-B4</div>
+  </div>
   </div>
 
   <div class="scroll-hint"><span>Explore</span><div class="scroll-line"></div></div>
@@ -339,7 +328,7 @@ footer p{font-size:.7rem;color:var(--text-dim);letter-spacing:.08em}
   </div>
 </section>
 
-<script src="liubao-town-config.js?v=1784044576"></script>
+<script src="liubao-town-config.js?v=1784045159"></script>
 <script>
 /* ================================================================
    CANVAS SCENE — Neo-Oriental Isometric Town
